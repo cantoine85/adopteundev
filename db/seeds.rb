@@ -22,3 +22,4 @@ skill1=Skill.new(name: 'ruby', description: 'ancien élève du wagon', level: 'n
 skill1.valid?
 skill1.save
 skill1.user=user1
+user1.save
