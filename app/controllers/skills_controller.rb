@@ -1,6 +1,10 @@
 class SkillsController < ApplicationController
+<<<<<<< HEAD
   before_action :set_user, only: :create
 
+=======
+  before_action :set_user , only: [:create]
+>>>>>>> c5afac727c015886922242ec8448e470cefc9451
 
   def index
     @skills = Skill.all
