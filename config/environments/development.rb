@@ -38,4 +38,9 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # permet a devise d'envoyer des emails
+  #qu elle est la racine de l'url de mon application?
+  # option par deffault qu'on on envoie eun email pour cree une adress absolue
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end

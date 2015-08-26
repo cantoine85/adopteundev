@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+  get 'home' => 'pages#home'
+
+
 
   resources :users do
     resources :skills, only: [ :create, :update, :edit, :show]

@@ -1,15 +1,17 @@
-<div class="banner text-center" style="background-image: url('http://unsplash.it/1000/400?')">
+<div class="banner text-center">
  <div class="banner-shadow"></div>
  <div class="banner-content">
    <h1>Adopte un dev'</h1>
    <p></p>
-   <a class="btn btn-primary btn-lg">En savoir plus</a>
+ </div>
+ <div class="img-tag" style="width:100%, background-color:whites">
+  <%= image_tag "train-logo.png" %>
  </div>
 
 <!--Searchbar-->
  <div class="searchbar">
-  <form action="" class='form-inline'>
-      <input type="text" class="searchbar-input form-control">
+  <form action="/users" class='form-inline'>
+      <input type="text" name="search_term" class="searchbar-input form-control">
       <button type="submit" class="btn btn-primary">Rechercher</button>
   </form>
  </div>
