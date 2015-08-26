@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
 
   def index
+    @users=User.all
 
   end
 
@@ -28,10 +29,10 @@ class UsersController < ApplicationController
   def destroy
   end
 
-private
+  private
 
   def user_params
-    params.require(:user).permit(:gender, :first_name, :last_name, :mail, :phone_number, :description, :address)
+    params.require(:user).permit(:gender, :first_name, :last_name, :email, :phone_number, :description, :address)
   end
 
 end
