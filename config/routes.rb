@@ -5,14 +5,21 @@ Rails.application.routes.draw do
   root 'pages#home'
 
 
+
   resources :skills, only: [ :index, :create, :update, :edit, :show]
 
   resources :users
   resources :projects only: [ :index, :create, :update, :edit, :show]
 
+
+
+
+
+
   # resources :users
 
   # resources :skills, only: [ :index, :create, :update, :edit, :show]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
