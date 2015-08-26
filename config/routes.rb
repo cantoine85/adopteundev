@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+
   devise_for :users
   get 'home' => 'pages#home'
 
-  resources :users
+
+
+  resources :users do
+    resources :skills, only: [ :create, :update, :edit, :show]
+  end
 
   root 'users#index'
 

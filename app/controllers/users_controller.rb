@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @skill = Skill.new
+
   end
 
   def new
