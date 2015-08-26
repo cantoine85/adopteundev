@@ -1,5 +1,9 @@
 class SkillsController < ApplicationController
-  before_action :set_user
+  before_action :set_user , only: [:create]
+
+  def index
+    @skills = Skill.all
+  end
 
   def new
       @skill = Skill.new
