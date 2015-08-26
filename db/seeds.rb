@@ -15,7 +15,5 @@ User.create(first_name: 'Vincent', last_name: 'Bitout', gender:'male', mail:'geo
 User.create(first_name: 'Caroline', last_name: 'Mipo', gender:'male', mail:'caroline@mkjube.com', phone_number:'0897765467', description:'dkdhjfbskjdfhskjdbfshsdjb', address:'14rue du pater 75000 paris' )
 User.create(first_name: 'Kristal', last_name: 'Mipo', gender:'male', mail:'plop@mkjube.com', phone_number:'0897765467', description:'dkdhjfbskjdfhskjdbfshsdjb', address:'14rue du pater 75000 paris' )
 
-
-
-
 Skill.create(name: 'ruby', description: 'ancien élève du wagon', level: 'ninja', price_per_hour: '12€/h')
+
