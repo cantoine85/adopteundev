@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   get 'home' => 'pages#home'
   root 'pages#home'
 
-  resources :users do
-    resources :skills, only: [ :create, :update, :edit, :show]
-  end
+  resources :users
+
+  resources :skills, only: [ :index, :create, :update, :edit, :show]
 
 
   # The priority is based upon order of creation: first created -> highest priority.
