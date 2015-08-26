@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'home' => 'pages#home'
 
-  resources :users
+
+  resources :users do
+    resources :skills, only: [ :create, :update, :edit, :show]
+  end
 
   root 'users#index'
 
