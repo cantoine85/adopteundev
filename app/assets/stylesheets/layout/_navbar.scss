@@ -1,7 +1,8 @@
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
+  background: #FFFFFD;
   transition: all 0.3s ease;
+  position: relative;
   &-fixed {
     position: fixed;
     z-index: 1;
@@ -16,9 +17,11 @@
     align-items: center;
   }
   &-item {
-    flex: 0 1 auto;
-    cursor: pointer;
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: flex-end;
     padding: 0 10px;
+    position: relative;
   }
   &-search {
     flex: 1 1 auto;
@@ -65,7 +68,7 @@
     padding: 0 20px;
     border-radius: 20em;
     line-height: 40px;
-    background-color: #D23333;
+    background-color: red;
     color: white;
     font-size: 14px;
     border: 2px solid $brand-color;
