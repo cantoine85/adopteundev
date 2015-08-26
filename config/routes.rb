@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
+  resources :users do
+    resources :skills, only: [ :create, :update, :edit, :show]
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
