@@ -3,7 +3,7 @@ class Project < ActiveRecord::Base
   belongs_to :user
 
   validates :status, presence: true
-  #validates :check_out
+  validates :check_out, presence: true
   validates :price, presence: true
   validates :number_of_hours, presence: true
 
