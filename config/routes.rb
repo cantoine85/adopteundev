@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   resources :skills, only: [ :index, :new, :create, :update, :edit, :show]
 
   resources :users
+
   resources :projects, except: [ :destroy]
+
 
 
 
