@@ -1,7 +1,31 @@
 <div class= "text-center">
-  <h1>Change your password</h1>
+  <h1>Update your profile</h1>
+  <h3>Complete your profile</h3>
 </div>
 
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= simple_form_for (@user) do |f| %>
+      <%=f.input :first_name, placeholder: "John", autofocus: true %>
+      <%=f.input :last_name, placeholder: "Doe" %>
+      <%= f.input :gender, as: :radio_buttons,
+          collection: ['Male', 'Female'], wrapper: :vertical_radio_and_checkboxes %>
+      <%=f.input :phone_number, placeholder: "+33 XXX XX XX XX" %>
+      <%=f.input :description, placeholder: "Description" %>
+      <%=f.input :address, placeholder: "16 villa gaudelet, 75011 Paris" %>
+      <%=f.input :email, placeholder: "john.doe@gmail.com" %>
+
+      <%=f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class= "text-center">
+  <h1>Change your password</h1>
+</div>
 
 <div class="container">
   <div class="row">
@@ -10,7 +34,7 @@
         <%= f.error_notification %>
 
         <div class="form-inputs">
-          <%= f.input :email, required: true, autofocus: true %>
+          <%= f.input :email, required: true %>
 
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -22,7 +46,7 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Update" %>
+          <%= f.button :submit, "Update password" %>
         </div>
       <% end %>
 
@@ -30,7 +54,7 @@
 
       <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-      <%= link_to "Back", :back %>
+      <p><%= link_to "back", users_path%></p>
     </div>
   </div>
 </div>
