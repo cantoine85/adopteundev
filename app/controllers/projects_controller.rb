@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :find_project, only: [:show]
+  before_action :find_project, only: [:show, :edit]
 
   def index
     @projects = Project.all
@@ -19,6 +19,16 @@ class ProjectsController < ApplicationController
   def show
   end
 
+
+  def edit
+  end
+
+  def update
+    @project = Project.find(project_params)
+    @project.update(params[:project])
+    redirect_to projects_path(@project)
+  end
+
   private
 
   def find_project
@@ -26,6 +36,8 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :status, :price, :number_of_hours)
+    params.require(:project).permit(:name, :status, :price, :number_of_hours, :check_out)
   end
 end
+
+
