@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'home' => 'pages#home'
 
-  resources :skills, only: [ :index, :create, :update, :edit, :show]
+  resources :skills, only: [ :index, :new, :create, :update, :edit, :show]
 
   resources :users
 
