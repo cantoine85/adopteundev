@@ -3,27 +3,17 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <%= simple_form_for [@project] do |f| %>
-        <%= f.error_notification %>
-        <%= f.input :status, collection: ["En cours","Effectué"], prompt: "status", selected: 2 %>
-        <%= f.input :ingredient %>
-        <%= f.button :submit %>
-      <% end %>
+      <%= @project.name %>
+      <%= @project.status %>
+      <%= @project.check_out %>
+      <%= @project.price %>
+      <%= @project.number_of_hours %>
+      <%= @project.skill_id %>
+      <%= @project.user_id %>
     </div>
   </div>
 </div>
 
 
 
- <!-- create_table "projects", force: :cascade do |t|
-    t.string   "status"
-    t.date     "check_out"
-    t.integer  "price"
-    t.integer  "number_of_hours"
-    t.integer  "skill_id"
-    t.integer  "user_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",  -->
 
-<!--
-Project.new(status: true, check_out:08102015, price: 500, number_of_hours: 700, skill_id:"ruby", datetime: 08112015, updated_at: 08112015) -->
