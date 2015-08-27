@@ -1,5 +1,5 @@
 class SkillsController < ApplicationController
-  before_action :set_user , only: [:create]
+  # before_action :set_user , only: [:create]
 
   def index
     @skills = Skill.all
@@ -14,7 +14,7 @@ class SkillsController < ApplicationController
 
   def create
     @skill = Skill.new
-    @skill.user = current_user
+    # @skill.user = current_user
     if @skill.save
       redirect_to users_path(@user)
     else
@@ -31,9 +31,9 @@ class SkillsController < ApplicationController
 
   private
 
-  def set_user
-    @user =User.find(params[:user_id])
-  end
+  # def set_user
+  #   @user =User.find(params[:user_id])
+  # end
 
   def skill_params
     params.require(:skill).permit(:name, :description, :level, :price_per_hour)

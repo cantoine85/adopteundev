@@ -2,7 +2,7 @@
   <div class="container navbar-wagon-container">
 
     <a href="/">
-      <%= image_tag "http://www.icone-png.com/png/14/13561.png",width: "60px" %>
+      <%= image_tag "train-logo.png",width: "160px" %>
     </a>
 
     <form action="" class="navbar-wagon-search">
@@ -22,16 +22,17 @@
       <hr> -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
+          <span class="padded"><%= current_user.first_name %></span>
           <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
+                <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
+              <%= link_to edit_user_path(current_user) do %>
+                <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
               <% end %>
             </li>
             <li>
@@ -45,6 +46,11 @@
               <% end %>
             </li>
             <li>
+              <%= link_to edit_user_registration_path do %>
+                <i class="fa fa-cog"></i>  <%= t ".profile", default: "Settings" %>
+              <% end %>
+            </li>
+            <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
               <% end %>
@@ -53,7 +59,7 @@
         </div>
       </div>
       <hr>
-      <%= link_to t(".top_call_to_action", default: "Add skill"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+      <%= link_to t(".top_call_to_action", default: "Add your skill"), new_skill_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
     <% else %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
