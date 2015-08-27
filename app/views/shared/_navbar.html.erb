@@ -2,7 +2,7 @@
   <div class="container navbar-wagon-container">
 
     <a href="/">
-      <%= image_tag "http://www.icone-png.com/png/14/13561.png",width: "60px" %>
+      <%= image_tag "train-logo.png",width: "160px" %>
     </a>
 
     <form action="" class="navbar-wagon-search">
@@ -53,7 +53,7 @@
         </div>
       </div>
       <hr>
-      <%= link_to t(".top_call_to_action", default: "Add skill"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+      <%= link_to t(".top_call_to_action", default: "Add your skill"), new_skill_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
     <% else %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
