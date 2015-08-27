@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
 
 
-  resources :skills, only: [ :index, :create, :update, :edit, :show]
+  resources :skills, only: [ :index, :new, :create, :update, :edit, :show]
 
   resources :users
 
