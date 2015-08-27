@@ -1,0 +1,23 @@
+<h1>new project</h1>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= simple_form_for @project do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :name, placeholder: "name" %>
+        <%= f.input :check_out,  %>
+        <%= f.input :status, collection: ["En cours", "Validé"], prompt: "Staus", selected: 2 %>
+        <%= f.input :price, placeholder: "price"%>
+        <%= f.input :number_of_hours, placeholder: "number of hours"%>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
