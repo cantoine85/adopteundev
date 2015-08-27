@@ -1,2 +1,26 @@
-<h1>Skills#new</h1>
-<p>Find me in app/views/skills/new.html.erb</p>
+
+
+<div class= "text-center">
+<h1>Add your ninja skills</h1>
+<h3>Today is the day you start earn money </h3>
+</div>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+       <%= simple_form_for [@user, @skill] do |f| %>
+       <%=f.input :name, placeholder: "write your name"%>
+       <%=f.input :description, placeholder: "write a little story hereabout you" %>
+       <%=f.input :level, placeholder: "what your level (beginner, ninja)" %>
+       <%=f.input :price_per_hour, placeholder: "your price four a hour" %>
+       <%=f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to "back", users_path%>
+</div>
+
+

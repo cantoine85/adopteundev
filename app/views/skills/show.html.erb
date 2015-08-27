@@ -3,14 +3,4 @@
 
 
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <%= simple_form_for [@user, @skill] do |f| %>
-        <%=f.input :description, placeholder: "write your ninja story here" %>
-        <%=f.input :skill_id, collection: Skill.all, prompt: "choose a coding language"%>
-        <%=f.button :submit, class: "btn btn-primary" %>
-      <% end %>
-    </div>
-  </div>
-</div>
+

@@ -2,12 +2,25 @@ Rails.application.routes.draw do
 
   devise_for :users
   get 'home' => 'pages#home'
+  root 'pages#home'
 
-  resources :skills, only: [ :index, :create, :update, :edit, :show]
+
+
+  resources :skills, only: [ :index, :new, :create, :update, :edit, :show]
 
   resources :users
 
-  root 'pages#home'
+  resources :projects, except: [ :destroy]
+
+
+
+
+
+
+
+  # resources :users
+
+  # resources :skills, only: [ :index, :create, :update, :edit, :show]
 
 
   # The priority is based upon order of creation: first created -> highest priority.
