@@ -4,8 +4,14 @@ class ProjectController < ApplicationController
   def show
   end
 
+  def new
+      @project = Project.new
+    end
 
-
+    def create
+      @project = Project.new(params[:project])
+      @project.save
+    end
 
   private
 
