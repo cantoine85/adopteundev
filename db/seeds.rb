@@ -4,7 +4,7 @@
 # Destroy all users from users table
 User.destroy_all
 # Create a github client
-client = Octokit::Client.new(login: "cantoine85", password: "***" )
+client = Octokit::Client.new(access_token: ENV["GITHUB_API_TOKEN"])
 
 # Access the account of my followers through their login
 client.followers.map do |f|
