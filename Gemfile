@@ -63,3 +63,5 @@ gem 'simple_form'
 gem 'rails_12factor', group: :production
 gem 'puma',           group: :production
 
+gem 'bootstrap-datepicker-rails'
+
