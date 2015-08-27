@@ -1,0 +1,25 @@
+<div class= "text-center">
+<h1>Update your profile</h1>
+<h3>Complete your profile</h3>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= simple_form_for (@user) do |f| %>
+      <%=f.input :first_name, placeholder: "John"%>
+      <%=f.input :last_name, placeholder: "Doe" %>
+      <%= f.input :gender, as: :radio_buttons,
+          collection: ['Male', 'Female'], wrapper: :vertical_radio_and_checkboxes %>
+      <%=f.input :phone_number, placeholder: "+33 XXX XX XX XX" %>
+      <%=f.input :description, placeholder: "Description" %>
+      <%=f.input :address, placeholder: "16 villa gaudelet, 75011 Paris" %>
+      <%=f.input :email, placeholder: "john.doe@gmail.com" %>
+
+      <%=f.button :submit, class: "btn btn-primary" %>
+      <%= link_to "back", users_path%>
+     <% end %>
+    </div>
+  </div>
+<%= link_to "Change your password", edit_user_registration_path %>
+</div>
