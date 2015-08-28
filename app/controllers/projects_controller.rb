@@ -1,19 +1,21 @@
 class ProjectsController < ApplicationController
   before_action :find_project, only: [:show, :edit]
 
-  def index
-    @projects = current_user.projects
-  end
-
   def new
     @project = Project.new
+    @skill = Skill.find(params[:skill_id])
   end
 
   def create
+    raise
     @project = Project.new(project_params)
     @project.user = current_user
-    @project.save
-    redirect_to projects_path(@project)
+    @project.skill = Skill.find(params[:skill_id])
+    if @project.save
+      redirect_to account_projects_path(@project)
+    else
+      render :new
+    end
   end
 
   def show
@@ -26,7 +28,7 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(project_params)
     @project.update(params[:project])
-    redirect_to projects_path(@project)
+    redirect_to account_projects_path
   end
 
   private
