@@ -7,20 +7,20 @@ module Account
     end
 
     def new
-        @skill = Skill.new
-    end
-
-    def edit
+      @skill = Skill.new
     end
 
     def create
       @skill = Skill.new(skill_params)
-      # @skill.user = current_user
+      @skill.user = current_user
       if @skill.save
-        redirect_to skill_path(@skill)
+        redirect_to account_skills_path
       else
         render :new
       end
+    end
+
+    def edit
     end
 
     def show
