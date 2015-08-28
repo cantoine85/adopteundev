@@ -31,12 +31,12 @@
               <% end %>
             </li>
             <li>
-              <%= link_to edit_user_path(current_user) do %>
+              <%= link_to "/users/:id(.:format) " do %>
                 <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
               <% end %>
             </li>
             <li>
-              <%= link_to skill_path(current_user) do %>
+              <%= link_to account_skills_path do %>
                 <i class="fa fa-graduation-cap"></i>  <%= t ".profile", default: "Skills" %>
               <% end %>
             </li>
