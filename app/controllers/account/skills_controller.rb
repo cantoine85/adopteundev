@@ -1,4 +1,4 @@
-module account
+module Account
   class SkillsController < ApplicationController
     # before_action :set_user , only: [:create]
 
