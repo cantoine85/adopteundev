@@ -2,7 +2,7 @@ class SkillsController < ApplicationController
   # before_action :set_user , only: [:create]
 
   def index
-    @skills = Skill.all
+    @skills = Skill.where(name: params[:search_term])
   end
 
   def new
