@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @skill = Skill.new
+    @skills = current_user.skills
 
   end
 
