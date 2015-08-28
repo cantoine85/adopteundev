@@ -12,9 +12,9 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
        <%= simple_form_for [@user, @skill] do |f| %>
-       <%=f.input :name, placeholder: "write your name"%>
-       <%=f.input :description, placeholder: "write a little story hereabout you" %>
-       <%=f.input :level, placeholder: "what your level (beginner, ninja)" %>
+       <%=f.input :name, collection: ["Ruby", "HTML", "PHP"], selected: ["Ruby"] %>
+       <%=f.input :description, placeholder: "write a little story here about your experience" %>
+       <%=f.input :level, collection: ["Baby", "Padawan", "Master", "Ninja"], selected: ["Baby"] %>
        <%=f.input :price_per_hour, placeholder: "your price four a hour" %>
        <%=f.button :submit, class: "btn btn-primary" %>
       <% end %>
