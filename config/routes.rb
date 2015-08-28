@@ -6,14 +6,15 @@ Rails.application.routes.draw do
 
 
 
-  resources :skills, only: [ :index, :new, :create, :update, :edit, :show]
+  resources :skills, only: [ :index, :new, :create, :update, :edit, :show] do
+    resources :projects, only: [:new, :create, :show]
+  end
 
   resources :users
 
-  resources :projects, except: [ :destroy]
-
   namespace :account do
     resources :skills
+    resources :projects, except: [ :destroy]
   end
 
 

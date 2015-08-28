@@ -1,26 +1,25 @@
-<h1 class="text-center">List of skills</h1>
+<h1 class="text-center">My super projects</h1>
 
 
 <div class="container">
   <div class="row">
-    <% @skills.each do |skill| %>
+    <% @projects.each do |project| %>
       <div class="col-xs-12 col-sm-4">
         <div class="card">
           <span class="card-bg" style="background-image: url('http://www.dvi43.com/wp-content/uploads/2015/01/geek.jpg')">
           </span>
+
           <span class="card-shadow"></span>
-          <span class="card-description"><%= skill.level %></span>
+          <span class="card-description"><%= project.price %></span>
           <span class="card-text">
-            <h2><%= skill.name %></h2>
-            <p><%= skill.description %></p>
-            <%= link_to "Adopte moi!", new_skill_project_path(skill), class:"btn btn-danger" %>
+            <h2><%= project.name %></h2>
+            <p><%= project.description%></p>
           </span>
           <span class="card-user">
-            <%= image_tag skill.user.avatar, class:"avatar avatar-bordered" %>
+            <%= image_tag current_user.avatar, class:"avatar avatar-bordered" %>
           </span>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-
