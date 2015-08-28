@@ -13,10 +13,10 @@ class SkillsController < ApplicationController
   end
 
   def create
-    @skill = Skill.new
+    @skill = Skill.new(skill_params)
     # @skill.user = current_user
     if @skill.save
-      redirect_to users_path(@user)
+      redirect_to skill_path(@skill)
     else
       render :new
     end
