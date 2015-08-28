@@ -14,7 +14,7 @@
        <%= simple_form_for @skill do |f| %>
        <%=f.input :name, collection: ["Ruby", "HTML", "PHP"], selected: ["Ruby"] %>
        <%=f.input :description, placeholder: "write a little story here about your experience" %>
-       <%=f.input :level, collection: ["Noob", "Padawan", "Master", "Ninja"], selected: ["Baby"] %>
+       <%=f.input :level, collection: ["Newbie", "Padawan", "Master", "Ninja"], selected: ["Newbie"] %>
        <%=f.input :price_per_hour, placeholder: "your price four a hour" %>
        <%=f.button :submit, class: "btn btn-primary" %>
       <% end %>
