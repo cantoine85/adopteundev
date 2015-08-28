@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   before_action :find_project, only: [:show, :edit]
 
   def index
-    @projects = Project.all
+    @projects = current_user.projects
   end
 
   def new

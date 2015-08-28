@@ -12,8 +12,9 @@ Rails.application.routes.draw do
 
   resources :projects, except: [ :destroy]
 
-
-
+  namespace :account do
+    resources :skills
+  end
 
 
 
