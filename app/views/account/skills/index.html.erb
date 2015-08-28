@@ -1,6 +1,26 @@
-<h1> My skills</h1>
-<ul>
-  <% @skills.each do | skill | %>
-    <li><%= skill.name %></li>
-  <% end %>
-</ul>
+<h1 class="text-center">My super skills</h1>
+
+
+<div class="container">
+  <div class="row">
+    <% @skills.each do |skill| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
+          <span class="card-bg" style="background-image: url('http://www.dvi43.com/wp-content/uploads/2015/01/geek.jpg')">
+          </span>
+
+          <span class="card-shadow"></span>
+          <span class="card-description"><%= skill.level %></span>
+          <span class="card-text">
+            <h2><%= skill.name %></h2>
+            <p><%= skill.description%></p>
+          </span>
+          <span class="card-user">
+            <%= image_tag current_user.avatar, class:"avatar avatar-bordered" %>
+          </span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
