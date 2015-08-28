@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :find_project, only: [:show, :edit]
+  before_action :find_user, only: [ :new, :create, :destroy]
 
   def index
     @projects = Project.all
@@ -10,29 +10,20 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(project_params)
-    @project.user = current_user
+    @project = @user.project.build(project_params)
     @project.save
-    redirect_to projects_path(@project)
+    redirect_to user_project_path(@project)
   end
 
   def show
   end
 
 
-  def edit
-  end
-
-  def update
-    @project = Project.find(project_params)
-    @project.update(params[:project])
-    redirect_to projects_path(@project)
-  end
 
   private
 
-  def find_project
-    @project = Project.find(params[:id])
+  def find_user
+    @user = User.find(params[:user_id])
   end
 
   def project_params
