@@ -16,13 +16,7 @@ Rails.application.routes.draw do
     resources :skills
     resources :projects, except: [ :destroy]
   end
-
-
-
-
-  # resources :users
-
-  # resources :skills, only: [ :index, :create, :update, :edit, :show]
+’
 
 
   # The priority is based upon order of creation: first created -> highest priority.
